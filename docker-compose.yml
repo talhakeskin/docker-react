@@ -1,0 +1,26 @@
+version: '3'
+services:
+  # . -> current folder
+  #react-app:
+  # this area is to specify the image's name so its going to be frontend_web_1 (projectName_imageName_1)
+  web:
+    # 'build .' is normally for 'Dockerfile' but for 'Dockerfile.dev' we have to use 'context' and 'dockerfile' below.
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    # volumes to see the code changes instantly
+    volumes:
+      - /app/node_modules
+      - .:/app
+  # you can run tests at the startup as "frontend_tests"
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    # volumes to see the code changes instantly
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]

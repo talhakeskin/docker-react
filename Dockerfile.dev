@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+COPY . .
+
+# if you encounter with EACCESS: permission denied, mkdir '/app/node_modukes/.cache' error, add chown below.
+COPY --chown=node:node ./ ./
+CMD ["npm", "start"]
