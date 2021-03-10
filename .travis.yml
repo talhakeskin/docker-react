@@ -1,0 +1,12 @@
+language: generic
+sudo: required
+services:
+  # docker is required
+  - docker
+
+before_install:
+  # force for Dockerfile.dev, the dev version.
+  - docker build -t talhakskn/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true talhakskn/docker-react npm run test -- --coverage
