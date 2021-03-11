@@ -10,3 +10,12 @@ before_install:
 
 script:
   - docker run -e CI=true talhakskn/docker-react npm run test -- --coverage
+
+deploy:
+  provider: heroku
+  app: "docker-react-1" # heroku app-name
+  api_key:
+    secure: $HEROKU_API_KEY
+  # deploy only the main branch
+  on:
+    branch: main
