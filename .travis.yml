@@ -14,8 +14,7 @@ script:
 deploy:
   provider: heroku
   app: "docker-react-1" # heroku app-name
-  api_key:
-    secure: "uc6c/A0Lh+PWi5GpdCfXrAhWZegLSEeLrz0e+EWHJ/ByiQIAUpCnLwPdsxzyceINF/Hn/yL/D7eT/7bDsb+dRuISlVdmE1DrHtH3x1vGfBhkjs/B5HZNUhCtedE4iWzgJGH+YqCgIhGZ5sgcmDVw24iCMVg2eqb3H+h2maAirI2j5dfxdWtvqUGkPP178QAD76Jzc/HQflIYTO5vRn+6vuGy7og643kH8uxm//AgvR5HDfeVZpaotUT7ek3uka+GECbEvvmgWtZ1mYsIrDSwtdjDZl9vlYrbNqOqKoIpOy/kyLQihvcmr+9eIihIfz2WTL0IEV1R+bGmN3BpRfPlhccvnJSXj3cqNo5sa+bI1GPF/LjH4njsPZ8Yv5c4Jz1njf8cI3nW8ciICnX9WqtWaB55kT7eWJkC1Uwakj4WfJ+XZt+UxSBPSt3zailryA5rSIXUny0HfaiBboljpsKq9KyynivA5aFOJQwGEghVeqkckg1JfkedoUhiWKog/2001WR2R+5ZAsEJozpAAfXyzedKFl3SL3Eu7hCuOR0FgGcjhDBWivsnQ9+tLOv2OLZNDjSoSFANKj+PdAHNv9CR9724I3bxMLRzBSU5NGYDvaw0b8DZs/PzuykkzBf6I8k/bxDwnu7OE+YH3meBytTJUKgQ3Gp8aQ0qR6fJexc95+w="
+  api_key: $HEROKU_API_KEY
   # deploy only the main branch
   on:
     branch: main
